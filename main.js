@@ -17,25 +17,12 @@ oReq.send();
 	
 
 document.addEventListener("DOMContentLoaded",function(){
-	menutab[0].addEventListener("click",function(){
-	  ajax(1);
-	  coloring(menutab[0],0);
-	  
-	});
-	menutab[1].addEventListener("click",function(){
-	  ajax(2);
-	  coloring(menutab[1],1);
-	});
-	
-	menutab[2].addEventListener("click",function(){
-	  ajax(3);
-	  coloring(menutab[2],2);
-	});
-	menutab[3].addEventListener("click",function(){
-	  ajax(4);
-	  coloring(menutab[3],3);
-	});
-
+	for(var i=0;i<menutab.length;i++){
+		menutab[i].addEventListener("click",function(){
+		    ajax(i+1);
+		    coloring(menutab[i],i);
+		});
+	}
 });
 function coloring(tab,i){
      tab.setAttribute('class',"tab selectedTab");
